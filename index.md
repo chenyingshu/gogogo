@@ -1,37 +1,22 @@
-## Welcome to GitHub Pages
+## Welcome to _Gogogo!_ Project Homepage
 
-You can use the [editor on GitHub](https://github.com/chenyingshu/gogogo/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+This is the basic introduction of our project, including our data collection, filtering, and recommendation, path planning, and final validation trip.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Introduction
+In this project, we will finish a one-day trip planning with public data and data-driven algorithms.
 
-### Markdown
+### Basic Data Examples
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```
+keyword,tag_posts,most#likes
+ngoutaokok,6147,5477
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+[Instagram search result with tag _#ngautaukok_](https://www.instagram.com/explore/tags/ngautaukok/) <br>
+<!-- and example image in the posts: <br>
+![Image](https://scontent-hkt1-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s750x750/92392163_2592017034403717_626054456789212505_n.jpg?_nc_ht=scontent-hkt1-1.cdninstagram.com&_nc_cat=101&_nc_ohc=3l0hxTq1MB4AX-h0Grd&edm=AABBvjUBAAAA&ccb=7-4&oh=d7aef8e89b4dc8bde81c75675a7dc4fe&oe=61900005&_nc_sid=83d603)
+ -->
 
-### Jekyll Themes
+### Destination Recommendation
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/chenyingshu/gogogo/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+### Path Planning
