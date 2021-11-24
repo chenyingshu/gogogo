@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Demo - Gogogo! Trip Planning</title>
+</head>
+
+<body>
+  <header class="page-header">
+    <h1 class="project-name">Demostration of Trip Planning</h1>
+    <h2 class="project-tagline">IIMP 6010 Final Project of Group Gogogo!</h2>
+    <a href="https://chenyingshu.github.io/gogogo/" class="btn">Homepage</a>
+  </header>
+
+  <main class="main-content" role="main">
+
+    <!--  Step 1 - START   -->
+    <div id="step_1">
+      <h1> Step 1: Location Recommendation with an Area</h1>
+
+      <!-- step 1.1 -->
+      <div id="step_1_1">
+        <h2> Step 1.1: Area Selection</h2>
+        <p>Please input your interest area name:</p>
+        <form onsubmit="DisplayCandidates()" action="javascript:void(0);">
+            <input list="areas" id="myArea" name="myArea" />
+            <datalist id="areas">
+              <option value="Kwun Tong Line">
+              <option value="Kai Tak">
+              <option value="Random">
+            </datalist>
+            <input class="submit_btn"  type="submit" value="Submit">
+        </form>
+
+        <p class="black-text" id="respond_1_1_0"></p>
+        <div id="step_1_1_res" class="hidden">
+          <div>
+            <p class="black-text">Here are the candidate areas nearby in this area:</p>
+            <ul class="location_list">
+              <li>Kwun Tong</li>
+              <li>Ngau Tau Kok</li>
+              <li>Kowloon Bay</li>
+              <li>Choi Hung</li>
+              <li>Diamond Hill</li>
+              <li>Wong Tai Sin</li>
+              <li>Lok Fu</li>
+              <li>Kowloon Tong</li>
+              <li>Shek Kip Mei</li>
+              <li>Prince Edward</li>
+              <li>Mong Kok</li>
+              <li>Yau Ma Tei</li>
+              <li>Ho Man Tin</li>
+              <li>Whampoa</li>
+              <li>To Kwa Wan</li>
+              <li>Sung Wong Toi</li>
+              <li>Kai Tak</li>
+            </ul>
+            <img class="img_map" src="../img/1_location_candidates.png">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- step 1.2 -->
+      <div id="step_1_2" class="hidden">
+        <h2> Step 1.2: Hot Places for Photography</h2>
+        <div id="step_1_2_res" class="hidden">
+          <p class="black-text">Here are the places with hot photos in Instagram:</p>
+          <ul class="location_list">
+            <li>Kwun Tong Public Pier</li>
+            <li>Jimmy Bridge</li>
+            <li>Kai Tak Cruise Terminal Park</li>
+            <li>Kai Tak Public Pier</li>
+            <li>Yau Tong</li>
+            <li>Lei Yue Mun</li>
+            <li>Choi Hung Estate</li>
+            <li>Choi Hung Estate Car Park</li>
+            <li>Nan Lian Garden</li>
+            <li>Chi Lin Nunnery</li>
+            <li>Festival Walk</li>
+            <li>Goldfish Market</li>
+            <li>Shek Kip Mei</li>
+            <li>Mong Kok</li>
+            <li>Yau Ma Tei</li>
+            <li>Kowloon City</li>
+            <li>Ho Man Tin</li>
+            <li>Oi Man Estate</li>
+            <li>Gourmet Place, The Whampoa</li>
+            <li>Whampoa Garden</li>
+          </ul>
+          <img class="img_map" src="../img/2_instagram_location_candidates.png">
+        </div>
+      </div>
+
+      <!-- step 1.3 -->
+      <div id="step_1_3" class="hidden">
+        <h2> Step 1.3: Recommend Places for Photography with Constraints</h2>
+
+        <div id="step_1_3_res" class="hidden">
+          <p class="black-text">Filtering with economical and sustainable constraints: </p>
+          <img class="img_map" src="../img/3_location_candidate_filtering.png">
+          <p></p>
+          <p class="black-text"> Recommended Locations: </p>
+          <ul class="location_list">
+            <li>Jimmy Bridge</li>
+            <li>Choi Hung Estate</li>
+            <li>Choi Hung Estate Car Park</li>
+            <li>Kai Tak Cruise Terminal Park</li>
+            <li>Kowloon City</li>
+            <li>Oi Man Estate</li>
+            <li>Whampoa Garden</li>
+          </ul>
+          <img class="img_map" src="../img/4_recommended_locations.png">
+        </div>
+      </div>
+
+    </div>
+    <!--  Step 1 - END   -->
+
+    <!--  Step 2 - START  -->
+<!--    <div id="step_2" class="hidden">-->
+    <div id="step_2">
+      <h1> Step 2: Path Planning with Preferences</h1>
+
+      <!-- step 2.1 -->
+      <div id="step_2_1" >
+        <h2> Step 2.1: Select Source Location</h2>
+        <form action="javascript:void(0);" onsubmit="SetSource()" >
+          <label for="source">Choose a place to set off:</label>
+          <select name="source" id="source">
+            <option value="hkust">HKUST</option>
+            <option value="default">Default</option>
+          </select>
+          <input class="submit_btn" type="submit" value="Submit">
+        </form>
+
+        <div id="step_2_1_res" class="hidden">
+          <p class="black-text">We will set off from <b><em>HKUST</em></b>. </p>
+        </div>
+      </div>
+
+      <!-- step 2.2 -->
+      <div id="step_2_2" class="hidden">
+        <h2> Step 2.2: Select Your Weights for Path Planning</h2>
+        <p>Please use the slider to adjust the weights in terms of <b><em>Happiness</em></b>, <b><em>Calories</em></b>, <b><em>Cost</em></b>, <b><em>Time</em></b>:</p>
+        <div class="slide_container">
+          <form onsubmit="PathPlanning()" action="javascript:void(0);">
+            <label>Happiness:</label>
+            <input type="range" min="0" max="100" value="50" class="slider" id="happy_w">
+            <label>Calories:</label>
+            <input type="range" min="0" max="100" value="40" class="slider" id="calories_w">
+            <label>Cost:</label>
+            <input type="range" min="0" max="100" value="40" class="slider" id="cost_w">
+            <label>Time:</label>
+            <input type="range" min="0" max="100" value="10" class="slider" id="time_w">
+            <br>
+            <button class="submit_btn" onclick="ResetWeights()">Reset</button>
+            <input class="submit_btn" type="submit" value="Submit">
+          </form>
+        </div>
+
+        <div id="step_2_2_res" class="hidden">
+          <div>
+            <p class="black-text">Computed Path:</p>
+            <img class="img_map" src="../img/1_location_candidates.png">
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--  Step 2 - END  -->
+
+    <!--  Loading Icon Area  -->
+    <div id='loading_icon' class="loading_area hidden">
+      <div class="loader"></div>
+    </div>
+  </main>
+</body>
+
+<script>
+    function GoToBottom(){
+        window.scrollTo(0,document.body.scrollHeight);
+    }
+
+    function Delay(time) {
+        return new Promise(resolve => setTimeout(resolve, time));
+    }
+
+    async function Loading() {
+        document.getElementById('loading_icon').classList.remove('hidden');
+        GoToBottom();
+        console.log('start loading');
+        await Delay(2500);
+        console.log('after loading');
+        document.getElementById('loading_icon').classList.add('hidden');
+    }
+
+    function Restart() {
+        console.log("Restart.")
+        document.getElementById("respond_1_1_0").innerHTML = '';
+        const step_ids = ['step_1_1', 'step_1_1_res', 'step_1_2', 'step_1_2_res', 'step_1_3', 'step_1_3_res'];
+        for (step of step_ids) {
+            // console.log("hide "+ step);
+            document.getElementById(step).classList.add('hidden');
+        }
+        document.getElementById(step_ids[0]).classList.remove('hidden');
+    }
+
+    /***** STEP 1 ******/
+    async function DisplayCandidates() {
+        Restart();
+        console.log('Display Candidates');
+        var x = document.getElementById("myArea");
+        var txt = "";
+        areas = new Set(['kwun tong', 'kwun tong line', 'kai tak', 'random']);
+        x.value = x.value.trim();
+        final_area = x.value;
+        if (areas.has(x.value.toLowerCase())) {
+            if (x.value === 'Random') {
+                txt = "We randomly select an area.<br> ";
+                final_area = 'Kwun Tong Line';
+            }
+        } else {
+            txt = 'We currently cannot support the area <em>'+ x.value +'</em>. Automatically we redirect to default area <em> ' + 'Kwun Tong Line' + ' </em>.<br> '
+            final_area = 'Kwun Tong Line';
+        }
+        txt += 'Start to explore candidates around <b><em><item class="capitalize">'+final_area+'</item></em></b>' + '.';
+
+        //Show location candidates
+        document.getElementById("respond_1_1_0").innerHTML = txt;
+        await Loading();
+        document.getElementById("step_1_1_res").classList.remove('hidden');
+        GoToBottom();
+
+        //Show instagram candidates
+        document.getElementById("step_1_2").classList.remove('hidden');
+        await Loading();
+        document.getElementById("step_1_2_res").classList.remove('hidden');
+        GoToBottom();
+
+        //Show instagram filtering
+        document.getElementById("step_1_3").classList.remove('hidden');
+        await Loading();
+        document.getElementById("step_1_3_res").classList.remove('hidden');
+        GoToBottom();
+
+    }
+
+    /***** STEP 2 ******/
+    function SetSource() {
+        document.getElementById('step_2_1_res').classList.remove('hidden');
+        document.getElementById('step_2_2').classList.remove('hidden');
+        GoToBottom();
+    }
+    function ResetWeights() {
+        const default_weights = [50,40,40,10];
+        const weight_ids = ['happy_w', 'calories_w', 'cost_w', 'time_w'];
+        for (let i = 0; i < 4; i++){
+            x = document.getElementById(weight_ids[i]);
+            x.value =default_weights[i];
+        }
+
+    }
+    async function PathPlanning() {
+
+    }
+
+</script>
+
+</html>
