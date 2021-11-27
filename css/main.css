@@ -332,6 +332,11 @@ html {
   border-radius: 0.3rem;
   transition: color 0.2s, background-color 0.2s, border-color 0.2s;
 }
+.google_map_inframe {
+  height: calc(0.75*80vw);
+  max-height: 640px;
+  width: 100%;
+}
 @media screen and (min-width: 64em) {
 
 }

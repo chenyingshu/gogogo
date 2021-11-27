@@ -1,3 +1,9 @@
+<!--
+ --- Demo for one-day trip of Group Gogogo!
+ --- @author:  Susan Yingshu CHEN
+ --- @date: Nov 2021
+-->
+
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -26,7 +32,7 @@
         <h2> Step 1.1: Area Selection</h2>
         <p>Please input your interest area name:</p>
         <form onsubmit="DisplayCandidates()" action="javascript:void(0);">
-            <input list="areas" id="myArea" name="myArea" />
+            <input list="areas" id="myArea" name="myArea" value="Kwun Tong Line" placeholder="Kwun Tong Line"/>
             <datalist id="areas">
               <option value="Kwun Tong Line">
               <option value="Kai Tak">
@@ -58,7 +64,7 @@
               <li>Sung Wong Toi</li>
               <li>Kai Tak</li>
             </ul>
-            <img class="img_map" src="../img/1_location_candidates.png">
+            <img class="img_map" src="../img/1_1_location_candidates.png">
           </div>
         </div>
 
@@ -91,7 +97,7 @@
             <li>Gourmet Place, The Whampoa</li>
             <li>Whampoa Garden</li>
           </ul>
-          <img class="img_map" src="../img/2_instagram_location_candidates.png">
+          <img class="img_map" src="../img/1_2_instagram_location_candidates.png">
         </div>
       </div>
 
@@ -101,7 +107,7 @@
 
         <div id="step_1_3_res" class="hidden">
           <p class="black-text">Filtering with economical and sustainable constraints: </p>
-          <img class="img_map" src="../img/3_location_candidate_filtering.png">
+          <img class="img_map" src="../img/1_3_location_candidate_filtering.png">
           <p></p>
           <p class="black-text"> Recommended Locations: </p>
           <ul class="location_list">
@@ -113,7 +119,14 @@
             <li>Oi Man Estate</li>
             <li>Whampoa Garden</li>
           </ul>
-          <img class="img_map" src="../img/4_recommended_locations.png">
+          <img class="img_map" src="../img/1_4_recommended_locations.png">
+
+          <div id="step_1_3_res_2">
+            <p></p>
+            <p class="black-text">This is the interactive locations: </p>
+            <div id="google_map_locations">
+            </div>
+          </div>
         </div>
       </div>
 
@@ -121,12 +134,12 @@
     <!--  Step 1 - END   -->
 
     <!--  Step 2 - START  -->
-<!--    <div id="step_2" class="hidden">-->
-    <div id="step_2">
+    <div id="step_2" class="hidden">
+      <h1></h1>
       <h1> Step 2: Path Planning with Preferences</h1>
 
       <!-- step 2.1 -->
-      <div id="step_2_1" >
+      <div id="step_2_1" class="hidden" >
         <h2> Step 2.1: Select Source Location</h2>
         <form action="javascript:void(0);" onsubmit="SetSource()" >
           <label for="source">Choose a place to set off:</label>
@@ -164,14 +177,28 @@
 
         <div id="step_2_2_res" class="hidden">
           <div>
+            <p></p>
             <p class="black-text">Computed Path:</p>
-            <img class="img_map" src="../img/1_location_candidates.png">
+            <img id='img_path_graph' class="img_map" src="">
           </div>
         </div>
 
       </div>
     </div>
     <!--  Step 2 - END  -->
+
+    <!--  Step 3 - START  -->
+    <div id="step_3" class="hidden">
+      <h1></h1>
+      <h1> Step 3: Visualize in the Map</h1>
+      <p>We utilize <em><a href="https://mymaps.google.com/">Google MyMaps</a></em> to visualize our computed travel paths.</p>
+      <div id="step_3_res" class="hidden">
+        <p class="black-text">This is an example of visualized interactive path for photography:</p>
+        <div id="google_map_paths"></div>
+        <p>Users can feel free to copy our suggested map in <em>Google MyMaps</em> and improve the locations and path based on his own preference. </p>
+      </div>
+    </div>
+    <!--  Step 3 - END  -->
 
     <!--  Loading Icon Area  -->
     <div id='loading_icon' class="loading_area hidden">
@@ -199,14 +226,20 @@
     }
 
     function Restart() {
-        console.log("Restart.")
+        console.log("Restart.");
+        ResetWeights();
         document.getElementById("respond_1_1_0").innerHTML = '';
-        const step_ids = ['step_1_1', 'step_1_1_res', 'step_1_2', 'step_1_2_res', 'step_1_3', 'step_1_3_res'];
-        for (step of step_ids) {
-            // console.log("hide "+ step);
-            document.getElementById(step).classList.add('hidden');
+        const hidden_step_ids = ['step_1_1_res', 'step_1_2',
+            'step_1_2_res', 'step_1_3', 'step_1_3_res', 'step_2',
+            'step_2_1', 'step_2_1_res', 'step_2_2', 'step_2_2_res',
+            'step_3', 'step_3_res'];
+        for (step of hidden_step_ids) {
+            step_ele = document.getElementById(step);
+            if (step_ele && !(step_ele.classList.contains('hidden'))) {
+                // console.log("hide "+ step);
+                step_ele.classList.add('hidden');
+            }
         }
-        document.getElementById(step_ids[0]).classList.remove('hidden');
     }
 
     /***** STEP 1 ******/
@@ -245,27 +278,95 @@
         document.getElementById("step_1_3").classList.remove('hidden');
         await Loading();
         document.getElementById("step_1_3_res").classList.remove('hidden');
+        document.getElementById("google_map_locations").innerHTML = '<iframe src="https://www.google.com/maps/d/embed?mid=1jaKuOTv3bAtSp3nPIPby82F_jjOd5J3_" class="google_map_inframe"></iframe>'
         GoToBottom();
 
+        // Show Step 2.1
+        document.getElementById("step_2").classList.remove('hidden');
+        document.getElementById("step_2_1").classList.remove('hidden');
+        GoToBottom();
     }
 
-    /***** STEP 2 ******/
+    /***** STEP 2 and 3 ******/
+    function RestartStep2_1() {
+        ResetWeights();
+        console.log("Restart from Step 2.1.");
+        document.getElementById("respond_1_1_0").innerHTML = '';
+        const hidden_step_ids = ['step_2_1_res', 'step_2_2', 'step_2_2_res', 'step_3', 'step_3_res'];
+        for (step of hidden_step_ids) {
+            step_ele = document.getElementById(step);
+            if (step_ele && !(step_ele.classList.contains('hidden'))) {
+                // console.log("hide "+ step);
+                step_ele.classList.add('hidden');
+            }
+        }
+    }
+    function RestartStep2_2() {
+        console.log("Restart from Step 2.2.");
+        document.getElementById("respond_1_1_0").innerHTML = '';
+        const hidden_step_ids = ['step_2_2_res', 'step_3', 'step_3_res'];
+        for (step of hidden_step_ids) {
+            step_ele = document.getElementById(step);
+            if (step_ele && !(step_ele.classList.contains('hidden'))) {
+                // console.log("hide "+ step);
+                step_ele.classList.add('hidden');
+            }
+        }
+    }
+
     function SetSource() {
+        RestartStep2_1();
         document.getElementById('step_2_1_res').classList.remove('hidden');
         document.getElementById('step_2_2').classList.remove('hidden');
         GoToBottom();
     }
     function ResetWeights() {
+        console.log("Reset weights.")
         const default_weights = [50,40,40,10];
         const weight_ids = ['happy_w', 'calories_w', 'cost_w', 'time_w'];
         for (let i = 0; i < 4; i++){
             x = document.getElementById(weight_ids[i]);
-            x.value =default_weights[i];
+            if (x) {
+                x.value =default_weights[i];
+            }
         }
-
     }
     async function PathPlanning() {
+        RestartStep2_2();
+        happy_w = document.getElementById("happy_w").value;
+        calories_w = document.getElementById("calories_w").value;
+        cost_w = document.getElementById("cost_w").value;
+        time_w = document.getElementById("time_w").value;
+        ESP = 1e-5;
+        if (Math.max(happy_w, calories_w, cost_w, time_w) - happy_w < ESP) {
+            document.getElementById("img_path_graph").src = "../img/2_2_path_plan_happy.svg"; //default
+        } else if (Math.max(happy_w, calories_w, cost_w, time_w) - calories_w < ESP){
+            document.getElementById("img_path_graph").src = "../img/2_2_path_plan_calorie.svg";
+        } else if (Math.max(happy_w, calories_w, cost_w, time_w) - cost_w < ESP){
+            document.getElementById("img_path_graph").src = "../img/2_2_path_plan_cost.svg";
+        } else if (Math.max(happy_w, calories_w, cost_w, time_w) - time_w < ESP){
+            document.getElementById("img_path_graph").src = "../img/2_2_path_plan_time.svg";
+        }
 
+        // Show path in graph format
+        await Loading();
+        document.getElementById("step_2_2_res").classList.remove('hidden');
+        GoToBottom();
+
+        // Final step
+        Visualization();
+    }
+
+    async function Visualization() {
+        // Show visualization in Map
+        console.log("Visualizing results.");
+        document.getElementById("step_3").classList.remove('hidden');
+        GoToBottom();
+        await Loading();
+        console.log("Output resultant map.");
+        document.getElementById("step_3_res").classList.remove('hidden');
+        document.getElementById("google_map_paths").innerHTML = '<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1-lcL9Yj1_vvx8QbhSx2x3qELsPR7Egb5" class="google_map_inframe"></iframe>'
+        GoToBottom();
     }
 
 </script>
