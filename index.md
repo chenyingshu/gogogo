@@ -1,4 +1,4 @@
-## Welcome to _Gogogo!_ Project Homepage
+<!-- ## Welcome to _Gogogo!_ Project Homepage -->
 
 This is the basic introduction of our project, including our data collection, filtering, recommendation, path planning, visualization, and final validation trip.
 
