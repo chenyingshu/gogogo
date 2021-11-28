@@ -158,11 +158,12 @@
       <!-- step 2.2 -->
       <div id="step_2_2" class="hidden">
         <h2> Step 2.2: Select Your Weights for Path Planning</h2>
-        <p>Please use the slider to adjust the weights in terms of <b><em>Happiness</em></b>, <b><em>Calories</em></b>, <b><em>Cost</em></b>, <b><em>Time</em></b>:</p>
+<!--        <p>Please use the slider to adjust the weights in terms of <b><em>Happiness</em></b>, <b><em>Calories</em></b>, <b><em>Cost</em></b>, <b><em>Time</em></b>:</p>-->
+        <p>Please use the slider to adjust the weights in terms of <b><em>Calories</em></b>, <b><em>Cost</em></b>, <b><em>Time</em></b> to define your travel <b><em>Happiness</em></b>:</p>
         <div class="slide_container">
           <form onsubmit="PathPlanning()" action="javascript:void(0);">
-            <label>Happiness:</label>
-            <input type="range" min="0" max="100" value="50" class="slider" id="happy_w">
+<!--            <label>Happiness:</label>-->
+<!--            <input type="range" min="0" max="100" value="50" class="slider" id="happy_w">-->
             <label>Calories:</label>
             <input type="range" min="0" max="100" value="40" class="slider" id="calories_w">
             <label>Cost:</label>
@@ -322,8 +323,9 @@
     }
     function ResetWeights() {
         console.log("Reset weights.")
-        const default_weights = [50,40,40,10];
-        const weight_ids = ['happy_w', 'calories_w', 'cost_w', 'time_w'];
+        const default_weights = [30,40,30];
+        // const weight_ids = ['happy_w', 'calories_w', 'cost_w', 'time_w'];
+        const weight_ids = ['calories_w', 'cost_w', 'time_w'];
         for (let i = 0; i < 4; i++){
             x = document.getElementById(weight_ids[i]);
             if (x) {
@@ -333,18 +335,21 @@
     }
     async function PathPlanning() {
         RestartStep2_2();
-        happy_w = document.getElementById("happy_w").value;
+        // happy_w = document.getElementById("happy_w").value;
         calories_w = document.getElementById("calories_w").value;
         cost_w = document.getElementById("cost_w").value;
         time_w = document.getElementById("time_w").value;
         ESP = 1e-5;
-        if (Math.max(happy_w, calories_w, cost_w, time_w) - happy_w < ESP) {
+        // if (Math.max(happy_w, calories_w, cost_w, time_w) - happy_w < ESP) {
+        //     document.getElementById("img_path_graph").src = "../img/2_2_path_plan_happy.svg"; //default
+        // } else
+        if ((Math.abs(calories_w - 30) < ESP) && (Math.abs(cost_w - 40) < ESP) && (Math.abs(time_w - 30)  < ESP)) {
             document.getElementById("img_path_graph").src = "../img/2_2_path_plan_happy.svg"; //default
-        } else if (Math.max(happy_w, calories_w, cost_w, time_w) - calories_w < ESP){
+        } else if (Math.max(calories_w, cost_w, time_w) - calories_w < ESP){
             document.getElementById("img_path_graph").src = "../img/2_2_path_plan_calorie.svg";
-        } else if (Math.max(happy_w, calories_w, cost_w, time_w) - cost_w < ESP){
+        } else if (Math.max(calories_w, cost_w, time_w) - cost_w < ESP){
             document.getElementById("img_path_graph").src = "../img/2_2_path_plan_cost.svg";
-        } else if (Math.max(happy_w, calories_w, cost_w, time_w) - time_w < ESP){
+        } else if (Math.max(calories_w, cost_w, time_w) - time_w < ESP){
             document.getElementById("img_path_graph").src = "../img/2_2_path_plan_time.svg";
         }
 
