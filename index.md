@@ -40,11 +40,14 @@ oimanestate,1110,425,https://www.instagram.com/p/CO8pnj9gNZ3
 After we collected destination candidates for photographing.
 We proposed an enconomical filtering algorithm based on popularity and sustanabilty.
 
+<!--![Pseudo Code for Location Recommendation](./img/recommend_alg.png)-->
+<img src="./img/recommend_alg.png" alt="Area candidates" width="60%" height="auto" >
 
 
 ### 3. Path Planning
-We consider four different factors for path planning, _Happy_ level, _Calories_, _Cost_, and _Time_.
-- Happy level is provided by the destination depending on its scenery beauty level.
+We consider three different factors for path planning, _Calories_, _Cost_, and _Time_, indicating customized _Happy_ level.
+
+- Happy level is provided by recommended destinations depending on its scenery beauty level and sufficiently few population, and other traveling experience such as energy consumption (calories), cost, and traffic time.
 - Calories can be computed based on distance and path via some algorithm.
 - Cost and transportation Time can be retrieved from some software, e.g., Google Map, CityMapper.
 
