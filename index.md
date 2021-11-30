@@ -2,6 +2,10 @@
 
 This is the basic introduction of our project, including system illustration, system demonstration and a final project presentation with a validation trip.
 
+We aim to design a trip planning system considering cost effectiveness, comfort and happiness for photograph lovers. 
+
+The output recommended locations and paths were verified with a actual trip experiment. And we discover that our system's plan can recommend places suitable for photographing with few people and artistic scenery, and provide happy traveling experience with less boring transportation. 
+
 ## System Illustration
 In this project, we prototype a one-day trip plan with public data and data-driven algorithms.  
 
