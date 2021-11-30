@@ -1,15 +1,17 @@
 <!-- ## Welcome to _Gogogo!_ Project Homepage -->
 
-This is the basic introduction of our project, including our data collection, filtering, recommendation, path planning, visualization, and final validation trip.
+This is the basic introduction of our project, including system illustration, system demonstration and a final project presentation with a validation trip.
 
-### Introduction
-In this project, we will finish a one-day trip planning with public data and data-driven algorithms.
+## System Illustration
+In this project, we prototype a one-day trip plan with public data and data-driven algorithms.  
 
-Basically, our system encloses four main steps:
+Basically, our trip planning system encloses four main steps:
 1. [Public Data Collection](#1-data-collection)
 2. [Destination Recommendation](2-destination-recommendation)
 3. [Path Planning](3-path-planning)
 4. [Interactive Path Visualization](4-path-visualization-on-map)
+
+For coding details, please refer to our Github repository. 
 
 ### 1. Data Collection
 #### Nearby Area Search
@@ -55,3 +57,17 @@ We consider three different factors for path planning, _Calories_, _Cost_, and _
 Finally, we visualize our recommended places and paths in [_Google MyMaps_](https://mymaps.google.com/).
 We give an initial suggested map and path planning produced by our system.
 And then the user can feel free to change locations and path in his own map.
+
+
+## System Demonstration
+
+Here is a short video clip of system demonstration (no audio):
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/i3DSoiUEotE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+Please check more details in the [demo link](https://chenyingshu.github.io/gogogo/demo/).
+
+## Project Presentation
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3rxb72IZaSg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
