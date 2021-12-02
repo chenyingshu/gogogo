@@ -15,3 +15,10 @@ The folder _Data_ contains the sample collected raw data for destination recomme
 ### Destination Recommendation
 
 ### Path Planning
+The folder Code contains the code of our path planning algorithm, user can simplely run TDSP/Debug/TDSP.exe to find the path result.
+In this program the user need to in put the number of cities, the start cities, the weights of cost, time and calorie to suggest their happyniess preference. 
+The user also need to give the cost Matrix between nodes.A cost matrix is a cities_num * cities_num size matirx.
+For example, if cities number is 3, the the matrix for cost looks like this:
+0 2.2 3.8
+2.1 0 2
+6.1 2.3 0
