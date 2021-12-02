@@ -16,7 +16,7 @@ It constains source code and presenation report file.
 - [ ] upload all codes
   - [x] data crawling
   - [ ] location recommendation
-  - [ ] path planning
+  - [x] path planning
 - [ ] refine homepage
   - [ ]  add intro-motivation
   - [ ]  details of recommendation
