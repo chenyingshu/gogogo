@@ -21,5 +21,5 @@ It constains source code and presenation report file.
   - [ ]  add intro-motivation
   - [ ]  details of recommendation
   - [ ]  details of path planning
-  - [ ]  add video
-  
+  - [x]  add video
+  - [ ]  add photo gallery
