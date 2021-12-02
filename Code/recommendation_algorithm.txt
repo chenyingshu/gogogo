@@ -1,0 +1,23 @@
+#Pseudocode for recommendation searching
+
+Function RecomSe(List j,num n)
+    # j -- list of candidate locations
+    # n -- number of locations that user want to visit
+    List k;     # list to store left locations after 1st iteration
+    
+    For i in j.lenth
+        If j[i].tagNum < 30k And j[i].tagNum > 1k
+            k[i].tagNum=j.tagNum
+            k[i].likes=j.likes
+        Endif
+        i=i+1
+    Endfor
+    
+    If i < n
+        return k
+    Endif
+    
+    #sort top N locations by the number of likes from previous filter
+    return sort(k.likes,num n)  
+    
+end function
