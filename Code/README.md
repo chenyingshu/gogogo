@@ -13,7 +13,7 @@ The folder _Data_ contains the sample collected raw data for destination recomme
 [_A Simple Example of Instagram Data Scraping.ipynb_](./A%20Simple%20Example%20of%20Instagram%20Data%20Scraping.ipynb) is a Python notebook script which shows an example how we collect the statistics of a candidate location from public photo website (e.g., Instagram).
 
 ### Destination Recommendation
-
+A pseudocode for recommendation searching
 ### Path Planning
 The folder Code contains the code of our path planning algorithm, user can simplely run TDSP/Debug/TDSP.exe to find the path result.
 In this program the user need to in put the number of cities, the start cities, the weights of cost, time and calorie to suggest their happyniess preference. 
