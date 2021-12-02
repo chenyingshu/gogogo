@@ -13,9 +13,9 @@ It constains source code and presenation report file.
 
 ## TODO List
 - [x] upload video+caption to youtube
-- [ ] upload all codes
+- [x] upload all codes
   - [x] data crawling
-  - [ ] location recommendation
+  - [x] location recommendation
   - [x] path planning
 - [ ] refine homepage
   - [ ]  add intro-motivation
