@@ -14,8 +14,4 @@ It constains source code and presenation report file.
 
 ## TODO List
 - [ ] refine homepage
-  - [x]  add intro-motivation
-  - [ ]  details of recommendation
-  - [ ]  details of path planning
-  - [x]  add video
   - [ ]  add photo gallery
