@@ -8,18 +8,14 @@ It constains source code and presenation report file.
 
 ## Source Code
 - The folder **"Code"** contains code samples for data collection and algorithms we used in this project.
-- The file **"Group9_Presentation_Slides.pdf"** is the final report slides.
-- The report corresponding video: (To Add
+- The file **"Group9_Presentation_Slides.pdf"** is the final presentation slides.
+- The file **"Group9_Project_Report.pdf"** is the final project report.
+- The report corresponding video: 
 
 ## TODO List
-- [x] upload video+caption to youtube
-- [x] upload all codes
-  - [x] data crawling
-  - [x] location recommendation
-  - [x] path planning
 - [ ] refine homepage
-  - [ ]  add intro-motivation
-  - [ ]  details of recommendation
+  - [x]  add intro-motivation
+  - []  details of recommendation
   - [ ]  details of path planning
   - [x]  add video
   - [ ]  add photo gallery
