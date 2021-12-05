@@ -8,9 +8,9 @@ It constains source code and presenation report file.
 
 ## Source Code
 - The folder **"Code"** contains code samples for data collection and algorithms we used in this project.
-- The file **"Group9_Presentation_Slides.pdf"** is the final presentation slides.
+- The file **"Group9_Presentation_Slides.pdf"** is the final presentation slides. And here is the corresponding [video](https://youtu.be/3rxb72IZaSg).
 - The file **"Group9_Project_Report.pdf"** is the final project report.
-- The report corresponding video: 
+
 
 ## TODO List
 - [ ] refine homepage
