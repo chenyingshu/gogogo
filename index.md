@@ -80,15 +80,47 @@ Our system output "Choi Hong Estate" > "Jimmy Bridge" > "Kai Tak Cruise Terminal
 Here are some photos taken by our travellers during the trip.
 
 <div style="display: flex; flex-direction: column">
-  <div style="display: flex;  flex: 4; flex-flow: row wrap; justify-content: flex-start; width: 100%; padding: 1em 0">
+  <p> Choi Hong Estate</p>
+  <div style="display: flex;  flex: 4; flex-flow: row wrap; justify-content: flex-start; width: 100%; padding-bottom: 1em ">
     <img style="flex:1; max-width: 200px" src="./img/gallery/choi_hong/1.jpg">
   </div>
    
-  <div style="display: flex;  flex: 4; flex-flow: row wrap; justify-content: flex-start; width: 100%; padding: 1em 0">
+  <p> Jimmy Bridge </p>
+  <div style="display: flex;  flex: 4; flex-flow: row wrap; justify-content: flex-start; width: 100%; padding-bottom: 1em ">
     <img style="flex:1; max-width: 200px" src="./img/gallery/jimmy_bridge/IMG_20211114_114100.jpg">
     <img style="flex:1; max-width: 200px" src="./img/gallery/jimmy_bridge/IMG_20211114_114602.jpg">
     <img style="flex:1; max-width: 200px" src="./img/gallery/jimmy_bridge/IMG_20211114_114704.jpg">
     <img style="flex:1; max-width: 200px" src="./img/gallery/jimmy_bridge/IMG_20211114_120839.jpg">
+  </div>
+ 
+  <p> Kai Tak Cruise Terminal </p>
+  <div style="display: flex;  flex: 4; flex-flow: row wrap; justify-content: flex-start; width: 100%; padding-bottom: 1em ">
+    <img style="flex:1; max-width: 200px" src="./img/gallery/kai_tak/IMG_20211114_122605.jpg">
+    <img style="flex:1; max-width: 200px" src="./img/gallery/kai_tak/IMG_20211114_122614.jpg">
+    <img style="flex:1; max-width: 200px" src="./img/gallery/kai_tak/IMG_20211114_124704.jpg">
+    <img style="flex:1; max-width: 200px" src="./img/gallery/kai_tak/IMG_20211114_124714.jpg">
+  </div>
+ 
+  <p> Kowloon City </p>
+  <div style="display: flex;  flex: 4; flex-flow: row wrap; justify-content: flex-start; width: 100%; padding-bottom: 1em ">
+    <img style="flex:1; max-width: 200px" src="./img/gallery/kowloon_city/IMG_20211114_140242.jpg">
+    <img style="flex:1; max-width: 200px" src="./img/gallery/kowloon_city/IMG_20211114_140743.jpg">
+    <img style="flex:1; max-width: 200px" src="./img/gallery/kowloon_city/IMG_20211114_135802.jpg">
+    <img style="flex:1; max-width: 200px" src="./img/gallery/kowloon_city/IMG_20211114_145156.jpg">
+  </div>
+ 
+  <p> Oi Man Estate </p>
+  <div style="display: flex;  flex: 4; flex-flow: row wrap; justify-content: flex-start; width: 100%; padding-bottom: 1em ">
+    <img style="flex:1; max-width: 200px" src="./img/gallery/oi_man/IMG_20211114_171430.jpg">
+    <img style="flex:1; max-width: 200px" src="./img/gallery/oi_man/IMG_20211114_171354.jpg">
+    <img style="flex:1; max-width: 200px" src="./img/gallery/oi_man/IMG_20211114_171558.jpg">
+    <img style="flex:1; max-width: 200px" src="./img/gallery/oi_man/IMG_20211114_171631.jpg">
+  </div>
+ 
+  <p> Whampoa Garden</p>
+  <div style="display: flex;  flex: 4; flex-flow: row wrap; justify-content: flex-start; width: 100%; padding-bottom: 1em ">
+    <img style="flex:1; max-width: 200px" src="./img/gallery/whampoa/IMG_20211114_182200.jpg">
+    <img style="flex:1; max-width: 200px" src="./img/gallery/whampoa/IMG_20211114_182501.jpg">
   </div>
  
 </div>
