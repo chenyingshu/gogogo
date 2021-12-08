@@ -79,12 +79,12 @@ Our system output "Choi Hong Estate" > "Jimmy Bridge" > "Kai Tak Cruise Terminal
 
 Here are some photos taken by our travellers during the trip.
 
-<div style="display: flex;">
-  <div style="display: flex;  flex: 4; flex-flow: row wrap; justify-content: flex-start; width: 100%">
+<div style="display: flex; flex-direction: column">
+  <div style="display: flex;  flex: 4; flex-flow: row wrap; justify-content: flex-start; width: 100%; padding: 1em 0">
     <img style="flex:1; max-width: 200px" src="./img/gallery/choi_hong/1.jpg">
   </div>
    
-  <div style="display: flex;  flex: 4; flex-flow: row wrap; justify-content: flex-start; width: 100%">
+  <div style="display: flex;  flex: 4; flex-flow: row wrap; justify-content: flex-start; width: 100%; padding: 1em 0">
     <img style="flex:1; max-width: 200px" src="./img/gallery/jimmy_bridge/IMG_20211114_114100.jpg">
     <img style="flex:1; max-width: 200px" src="./img/gallery/jimmy_bridge/IMG_20211114_114602.jpg">
     <img style="flex:1; max-width: 200px" src="./img/gallery/jimmy_bridge/IMG_20211114_114704.jpg">
