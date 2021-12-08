@@ -72,6 +72,17 @@ Here is a short video clip of system demonstration (no audio):
 
 Please check more details in the [demo link](https://chenyingshu.github.io/gogogo/demo/).
 
+## Empirical Trip
+We take "Kwun Tong Line" as an experimental target area and input N = 6 destinations for trip planning. 
+
+Our system output "Choi Hong Estate" > "Jimmy Bridge" > "Kai Tak Cruise Terminal" > "Kowloon City" > "Oi Man Estate" > "Whampoa Garden" recommended locations and travel paths.
+
+Here are some photos taken by our travellers during the trip.
+
+<div>
+ TBD
+</div>
+
 ## Project Presentation
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3rxb72IZaSg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
