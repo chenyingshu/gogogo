@@ -11,7 +11,8 @@ It constains source code and presenation report file.
 - The file **"Group9_Presentation_Slides.pdf"** is the final presentation slides. And here is the corresponding [video](https://youtu.be/3rxb72IZaSg).
 - The file **"Group9_Project_Report.pdf"** is the final project report.
 
-
+<!--
 ## TODO List
-- [ ] refine homepage
-  - [ ]  add photo gallery
+- [x] refine homepage
+  - [x]  add photo gallery
+-->
